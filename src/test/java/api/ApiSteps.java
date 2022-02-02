@@ -2,6 +2,7 @@ package api;
 
 import config.App;
 import io.qameta.allure.Step;
+import io.qameta.allure.restassured.AllureRestAssured;
 import org.openqa.selenium.Cookie;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -16,6 +17,7 @@ public class ApiSteps {
     public void getAndSetCookieToTheBrowser() {
         String authorizationCookie =
                 given()
+                        .filter(new AllureRestAssured())
                         .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                         .formParam("Email", App.config.getUserLogin())
                         .formParam("Password", App.config.getUserPassword())
@@ -36,6 +38,7 @@ public class ApiSteps {
 
         String authorizationCookie =
                 given()
+                        .filter(new AllureRestAssured())
                         .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                         .body(data)
                         .when()

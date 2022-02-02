@@ -9,18 +9,21 @@ import org.aeonbits.owner.Config;
 })
 public interface AppConfig extends Config {
 
-    @Config.Key("webUrl")
+    @Key("webUrl")
     @Config.DefaultValue("http://demowebshop.tricentis.com")
     String getWebUrl();
 
-    @Config.Key("apiUrl")
+    @Key("apiUrl")
     @Config.DefaultValue("http://demowebshop.tricentis.com")
     String getApiUrl();
 
-    @Config.Key("userLogin")
+    @Key("remoteUrl")
+    String getRemoteUrl();
+
+    @Key("userLogin")
     String getUserLogin();
 
-    @Config.Key("userPassword")
+    @Key("userPassword")
     String getUserPassword();
 
     @Key("token")
