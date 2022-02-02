@@ -16,7 +16,7 @@ public class MainPage {
 
     @Step("Verify successful authorization")
     public void verifySuccessfulAuthorization() {
-        $(".account").shouldHave(text(App.config.userLogin()));
+        $(".account").shouldHave(text(App.config.getUserLogin()));
     }
 
     @Step("Go to the cart")

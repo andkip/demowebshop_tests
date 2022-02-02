@@ -18,8 +18,8 @@ public class DemowebshopTests {
     @BeforeAll
     static void configureBaseUrl() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        RestAssured.baseURI = App.config.apiUrl();
-        Configuration.baseUrl = App.config.webUrl();
+        RestAssured.baseURI = App.config.getApiUrl();
+        Configuration.baseUrl = App.config.getWebUrl();
     }
 
     @Test

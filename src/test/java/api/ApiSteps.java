@@ -17,8 +17,8 @@ public class ApiSteps {
         String authorizationCookie =
                 given()
                         .contentType("application/x-www-form-urlencoded; charset=UTF-8")
-                        .formParam("Email", App.config.userLogin())
-                        .formParam("Password", App.config.userPassword())
+                        .formParam("Email", App.config.getUserLogin())
+                        .formParam("Password", App.config.getUserPassword())
                         .when()
                         .post(loginEndpoint)
                         .then()
